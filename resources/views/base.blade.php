@@ -1,33 +1,42 @@
 <!doctype html>
 <html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ $title }}</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ $title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="/images/favicon.png">
-        <link href="//fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
 
-        @section('stylesheet')
-            <link rel="stylesheet" href="/css/app.css">
-        @show
+    @section('stylesheet')
+      {{-- <link rel="stylesheet" href="/css/vendor.css" type="text/css"> --}}
+      <link rel="stylesheet" href="/css/app.css">
+    @show
 
-    </head>
-    <body class="{{ implode(' ', $body_classes) }}">
-        <!--[if lt IE 9]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+  </head>
+  <body class="{{ implode(' ', $body_classes) }}">
+    <!--[if lt IE 9]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
 
-        <div id="page">
-            @yield('page')
-        </div>
+    <div id="page">
+      <div class="container">
+        @include('partials.header')
 
-        @section('javascript')
-            {{--<script src="{{ asset('assets/twotabs/js/libs/jquery-2.0.3.min.js') }}"></script>--}}
+        <section id="main">
+          @yield('main')
+        </section>
 
-            {{--<script src="{{ asset('assets/twotabs/js/main.js') }}"></script>--}}
-        @show
-    </body>
+        @include('partials.footer')
+      </div>
+    </div>
+
+    @section('javascript')
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+      <script type="text/javascript" src="/js/app.js"></script>
+    @show
+  </body>
 </html>
