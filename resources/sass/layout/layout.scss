@@ -1,0 +1,7 @@
+.container {
+  max-width: $max-screen;
+  margin: 0 auto;
+}
+
+@import 'header';
+@import 'footer';

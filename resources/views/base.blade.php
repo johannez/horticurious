@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="/images/favicon.png">
-    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:700|Nunito:400,700" rel="stylesheet">
 
     @section('stylesheet')
       {{-- <link rel="stylesheet" href="/css/vendor.css" type="text/css"> --}}
+      
       <link rel="stylesheet" href="/css/app.css">
     @show
 
