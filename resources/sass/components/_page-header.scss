@@ -1,0 +1,13 @@
+.page__header {
+  position: relative;
+
+  .page__intro {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 40%;
+    color: #FFF;
+    transform: translateY(-50%);
+    font-size: 2.4rem;
+  }
+}

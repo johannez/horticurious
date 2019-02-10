@@ -1,3 +1,46 @@
 #header {
-  
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background: #FFF;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    height: 130px;
+  }
+
+  &.scrolling {
+    background: rgba(0,0,0, 0.9);
+  }
+
+  .meta-info {
+    text-align: right;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+    color: $medium-gray;
+
+    a {
+      color: $medium-gray;
+    }
+  }
+
+  .menu-wrapper {
+    flex: 0 1 auto;
+  }
+
+  .site-logo {
+    flex: 0 1 150px;
+    img {
+      height: 90px;
+      width: 90px;
+    }
+    
+  }
+
 }
+
+

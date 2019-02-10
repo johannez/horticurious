@@ -1,16 +1,16 @@
 <footer id="footer">
+  <div class="container">
+    <div class="copyright">© {{ date('Y') }}</div>
 
-  <div class="copyright">© {{ date('Y') }}</div>
-
-  <nav id="footer-menu" class="nav" role="navigation">
-    <ul>
-      <li>
-        <a href="terms">{{ __('Terms of Use') }}</a>
-      </li>
-      <li>
-        <a href="Policy">{{ __('Privacy Policy') }}</a>
-      </li>
-    </ul>
-  </nav>
-
+    <nav id="footer-menu" class="nav" role="navigation">
+      <ul>
+        <li>
+          <a href="terms">{{ __('Terms of Use') }}</a>
+        </li>
+        <li>
+          <a href="Policy">{{ __('Privacy Policy') }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </footer>

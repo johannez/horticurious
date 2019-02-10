@@ -1,7 +1,8 @@
 $_button-background-color: $action-color;
 $_button-background-color-hover: shade($action-color, 20%);
 
-#{$all-buttons} {
+#{$all-buttons},
+.button {
   appearance: none;
   background-color: $_button-background-color;
   border: 0;
@@ -39,5 +40,17 @@ $_button-background-color-hover: shade($action-color, 20%);
     &:hover {
       background-color: $_button-background-color;
     }
+  }
+}
+
+button.lity-close {
+  background: transparent;
+  font-size: 35px;
+  line-height: 35px;
+  padding: 0;
+  color: #FFF;
+
+  &:hover {
+    background: transparent;
   }
 }

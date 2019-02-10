@@ -8,7 +8,7 @@
 
   <article class="page page--home">
 
-    <header class="content-top">
+    <header class="page__header">
       <div class="page__header-image">
         <img src="//dummyimage.com/1400x600">
       </div>
@@ -19,28 +19,29 @@
       </div>
     </header>
 
+    <div class="page__content">
+      <section id="services">
+        <h2>Services</h2>
+        <p>cards with information about the services you offer</p>
+      </section>
 
-    <section id="services">
-      <h2>Services</h2>
-      <p>cards with information about the services you offer</p>
-    </section>
+      <section id="portfolio">
+        <h2>Selected Gardens</h2>
+        <p>images, title, description</p>
 
-    <section id="portfolio">
-      <h2>Selected Gardens</h2>
-      <p>images, title, description</p>
+        <p>Random Testimonial</p>
+      </section>
 
-      <p>Random Testimonial</p>
-    </section>
+      <section id="horticulture">
+        <h2>Follow Us</h2>
+        <p>blog posts from Tumblr. Link to Facebook and Instagram.</p>
+      </section>
 
-    <section id="horticulture">
-      <h2>Follow Us</h2>
-      <p>blog posts from Tumblr. Link to Facebook and Instagram.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Let's Talk</h2>
-      <p>general contact form</p>
-    </section>
+      <section id="contact">
+        <h2>Let's Talk</h2>
+        <p>general contact form</p>
+      </section>
+    </div>
 
   </article>
 

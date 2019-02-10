@@ -23,15 +23,13 @@
     <![endif]-->
 
     <div id="page">
-      <div class="container">
-        @include('partials.header')
+      @include('partials.header')
 
-        <section id="main">
-          @yield('main')
-        </section>
+      <section id="content">
+        @yield('main')
+      </section>
 
-        @include('partials.footer')
-      </div>
+      @include('partials.footer')
     </div>
 
     @section('javascript')

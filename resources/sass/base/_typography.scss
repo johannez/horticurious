@@ -15,26 +15,12 @@ h6 {
   font-size: modular-scale(1);
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
-  font-weight: 700;
 }
 
 h1 {
-  line-height: 1;
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.6rem;
-}
-
-h3 {
-  font-size: 2.4rem;
-}
-
-h4 {
-  font-size: 2.2rem;
+  font-size: 7rem;
+  margin-bottom: 2rem;
   font-weight: 400;
-  text-transform: uppercase;
 }
 
 p {
@@ -44,6 +30,7 @@ p {
 a {
   color: $action-color;
   text-decoration-skip: ink;
+  text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:hover {
