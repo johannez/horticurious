@@ -521,7 +521,17 @@ body {
   background: #FFF;
 }
 
-#header .container {
+#header .header__top {
+  text-align: right;
+  background: #068587;
+}
+
+#header .header__top .container {
+  height: 3.5rem;
+  line-height: 3.3rem;
+}
+
+#header .header__bottom .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -544,11 +554,11 @@ body {
   font-size: 1.6rem;
   margin-bottom: 1rem;
   margin-right: 3rem;
-  color: #999;
+  color: #FFF;
 }
 
 #header .meta-info a {
-  color: #999;
+  color: #FFF;
 }
 
 #header .menu-wrapper {
@@ -557,19 +567,33 @@ body {
           flex: 0 1 auto;
 }
 
-#header .site-logo {
+#header .site__logo {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 150px;
-          flex: 0 1 150px;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
-#header .site-logo img {
+#header .site__logo img {
   height: 90px;
   width: 90px;
 }
 
+#header .site__logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .site__name {
+  color: #058758;
+  font-size: 3rem;
+}
+
 #content {
-  padding-top: 130px;
+  padding-top: 165px;
 }
 
 .page__content {
@@ -613,7 +637,7 @@ body {
   padding: 0 3rem;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 #menu-main a:hover {
@@ -622,6 +646,21 @@ body {
 
 .page__header {
   position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.page__header .page__header-image {
+  line-height: 1rem;
+}
+
+.page__header .page__header-image-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .page__header .page__intro {

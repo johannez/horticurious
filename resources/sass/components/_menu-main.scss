@@ -9,7 +9,8 @@
     padding: 0 3rem;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    // font-weight: bold;
+    letter-spacing: 1px;
 
     &:hover {
       color: $action-color;

@@ -1,33 +1,41 @@
 <header id="header">
-  <div class="container">
-    <div class="site-logo">
-      <a href="/">
-        <img src="/svg/logo.svg" alt="Site logo" width="972" height="1294">
-      </a>
-    </div>
-
-    <div class="menu-wrapper">
-
+  <div class="header__top">
+    <div class="container">
       <div class="meta-info">
         <span class="meta__phone">(250) 218-0826</span> | <span class="meta__email"><a href="mailto:trisha@horticurious.ca">trisha@horticurious.ca</a></span>
       </div>
-
-      <nav id="menu-main" role="navigation">
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#horticulture">Horticulture</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-
-      {{-- <div id="trigger-mobile-menu-wrapper">
-        <a href="#nav-mobile">
-          <svg class="icon icon-bars"><use xlink:href="/images/icons.svg#icon-menu" /></svg>
-          <svg class="icon icon-close"><use xlink:href="/images/icons.svg#icon-close" /></svg>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="site__logo">
+        <a href="/">
+          <img src="/svg/logo.svg" alt="Site logo">
+          <span class="site__name"><span>H</span>orticurious</span>
         </a>
-      </div> --}}
+      </div>
+
+      <div class="menu-wrapper">
+
+
+
+        <nav id="menu-main" role="navigation">
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#horticulture">Horticulture</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+
+        {{-- <div id="trigger-mobile-menu-wrapper">
+          <a href="#nav-mobile">
+            <svg class="icon icon-bars"><use xlink:href="/images/icons.svg#icon-menu" /></svg>
+            <svg class="icon icon-close"><use xlink:href="/images/icons.svg#icon-close" /></svg>
+          </a>
+        </div> --}}
+      </div>
     </div>
   </div>
 

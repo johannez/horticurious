@@ -10,7 +10,8 @@
 
     <header class="page__header">
       <div class="page__header-image">
-        <img src="//dummyimage.com/1400x600">
+        <img src="https://picsum.photos/1440/720?image=976">
+        <div class="page__header-image-filter"></div>
       </div>
 
       <div class="page__intro">
