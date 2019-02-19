@@ -1,0 +1,4 @@
+name: horticurious
+recipe: laravel
+config:
+  webroot: public
