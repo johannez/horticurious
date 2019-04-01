@@ -9,6 +9,9 @@
 
     <link rel="shortcut icon" href="/images/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Lora:700|Nunito:400,700" rel="stylesheet">
+    
+
+
 
     @section('stylesheet')
       {{-- <link rel="stylesheet" href="/css/vendor.css" type="text/css"> --}}
@@ -34,6 +37,8 @@
 
     @section('javascript')
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/solid.js" integrity="sha384-IA6YnujJIO+z1m4NKyAGvZ9Wmxrd4Px8WFqhFcgRmwLaJaiwijYgApVpo1MV8p77" crossorigin="anonymous"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" crossorigin="anonymous"></script>
 
       <script type="text/javascript" src="/js/app.js"></script>
     @show

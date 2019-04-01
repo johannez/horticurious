@@ -33,8 +33,8 @@ textarea {
   appearance: none;
   background-color: $_form-background-color;
   border: $base-border;
-  border-radius: $base-border-radius;
-  box-shadow: $_form-box-shadow;
+  border-radius: 0;
+  box-shadow: 0;
   box-sizing: border-box;
   margin-bottom: $small-spacing;
   padding: $base-spacing / 3;
@@ -45,11 +45,11 @@ textarea {
     border-color: shade($base-border-color, 20%);
   }
 
-  &:focus {
-    border-color: $action-color;
-    box-shadow: $_form-box-shadow-focus;
-    outline: none;
-  }
+  // &:focus {
+  //   border-color: $action-color;
+  //   box-shadow: $_form-box-shadow-focus;
+  //   outline: none;
+  // }
 
   &:disabled {
     background-color: shade($_form-background-color, 5%);
