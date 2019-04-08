@@ -22,6 +22,7 @@
       align-items: center;
       padding: 0 4rem;
       height: 130px;
+      transition: all .4s ease;
     }
   }
 
@@ -64,6 +65,31 @@
     font-size: 3rem;
   }
 
+}
+
+.header-small {
+  #header {
+    .meta-info {
+      font-size: 1.4rem;
+    }
+
+    .header__bottom {
+      .container {
+        height: 70px;
+      }
+    }
+    
+    .site__logo {
+      img {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .site__name {
+      font-size: 2.4rem;
+    }
+  }
 }
 
 

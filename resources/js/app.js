@@ -20,3 +20,17 @@
 // const app = new Vue({
 //     el: '#app'
 // });
+
+if ($(document).scrollTop() > 50) {
+  $('body').addClass('header-small');
+}
+
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+      $('body').addClass('header-small');
+  } else {
+      $('body').removeClass('header-small');
+  }
+});
+
+

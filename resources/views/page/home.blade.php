@@ -39,26 +39,19 @@
 
       <section id="portfolio">
         <h2>Selected Gardens</h2>
-        <div class="portfolio-listing">
-          @foreach ($portfolios as $port)
-            <div class="portfolio">
-              <div class="portfolio__image">
-                <img src="{{ $port['images'][0] }}" alt="testing">
-              </div>
-              <div class="portfolio__title">{{ $port['title'] }}</div>
-            </div>
-          @endforeach
-        </div>
-
-        <div class="testimonial">
-          <div class="testimonial__content">Praesent vestibulum dapibus nibh. Praesent ac sem eget est egestas volutpat. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.</div>
-          <div class="testimonial__author">Proin viverra ligula sit</div>
-        </div>
+        @include('portfolio.index')
       </section>
 
       <section id="horticulture">
         <h2>Follow Us</h2>
         <p>blog posts from Tumblr. Link to Facebook and Instagram.</p>
+      </section>
+
+      <section id="testimonial">
+        <div class="testimonial">
+          <div class="testimonial__content">Praesent vestibulum dapibus nibh. Praesent ac sem eget est egestas volutpat. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.</div>
+          <div class="testimonial__author">Proin viverra ligula sit</div>
+        </div>
       </section>
 
       <section id="contact">

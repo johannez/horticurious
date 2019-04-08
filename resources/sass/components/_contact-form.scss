@@ -1,0 +1,40 @@
+#contact-form {
+  .form-item {
+    flex: 0 1 auto;
+    margin: 0 1rem;
+    width: 50%;
+
+    &.details {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+
+  input[type="text"],
+  textarea {
+    background: none;
+    border-bottom: 1px solid #FFF;
+    color: #FFF;
+
+    &::placeholder {
+      color: #FFF;
+    }
+  }
+
+  .row {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-actions {
+    text-align: right;
+    margin-top: 3rem;
+
+    button {
+      background: none;
+      border: 1px solid #FFF;
+      margin: 0 1rem;
+    }
+  }
+}

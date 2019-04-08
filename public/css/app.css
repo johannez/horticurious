@@ -8,16 +8,17 @@ button,
           appearance: none;
   background-color: #068587;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: 0.75rem 1.5rem;
+  padding: 0 2rem;
   text-align: center;
   text-decoration: none;
   -webkit-transition: background-color 150ms ease;
@@ -28,6 +29,8 @@ button,
           user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  height: 55px;
+  line-height: 53px;
 }
 
 button:hover,
@@ -124,17 +127,20 @@ textarea {
      -moz-appearance: none;
           appearance: none;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 0;
   -webkit-box-shadow: 0;
           box-shadow: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-bottom: 0.75rem;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   -webkit-transition: border-color 150ms ease;
   transition: border-color 150ms ease;
   width: 100%;
+  height: 55px;
+  line-height: 53px;
+  font-size: 1.8rem;
 }
 
 [type='color']:hover,
@@ -156,6 +162,28 @@ textarea:hover {
   border-color: #b1b1b1;
 }
 
+[type='color']:focus,
+[type='date']:focus,
+[type='datetime']:focus,
+[type='datetime-local']:focus,
+[type='email']:focus,
+[type='month']:focus,
+[type='number']:focus,
+[type='password']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='text']:focus,
+[type='time']:focus,
+[type='url']:focus,
+[type='week']:focus,
+input:not([type]):focus,
+textarea:focus {
+  border-color: #068587;
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+  outline: none;
+}
+
 [type='color']:disabled,
 [type='date']:disabled,
 [type='datetime']:disabled,
@@ -174,25 +202,6 @@ input:not([type]):disabled,
 textarea:disabled {
   background-color: #f2f2f2;
   cursor: not-allowed;
-}
-
-[type='color']:disabled:hover,
-[type='date']:disabled:hover,
-[type='datetime']:disabled:hover,
-[type='datetime-local']:disabled:hover,
-[type='email']:disabled:hover,
-[type='month']:disabled:hover,
-[type='number']:disabled:hover,
-[type='password']:disabled:hover,
-[type='search']:disabled:hover,
-[type='tel']:disabled:hover,
-[type='text']:disabled:hover,
-[type='time']:disabled:hover,
-[type='url']:disabled:hover,
-[type='week']:disabled:hover,
-input:not([type]):disabled:hover,
-textarea:disabled:hover {
-  border: 1px solid #ddd;
 }
 
 [type='color']::-webkit-input-placeholder,
@@ -254,6 +263,8 @@ textarea::placeholder {
 
 textarea {
   resize: vertical;
+  height: auto;
+  line-height: 1.5;
 }
 
 [type="checkbox"],
@@ -270,14 +281,6 @@ textarea {
 select {
   margin-bottom: 0.75rem;
   width: 100%;
-}
-
-[type="checkbox"]:focus,
-[type="radio"]:focus,
-[type="file"]:focus,
-select:focus {
-  outline: 3px solid rgba(6, 133, 135, 0.6);
-  outline-offset: 2px;
 }
 
 html {
@@ -463,6 +466,227 @@ hr {
   margin: 1.5rem 0;
 }
 
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+#cboxWrapper {
+  max-width: none;
+}
+
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#cboxMiddleLeft,
+#cboxBottomLeft {
+  clear: left;
+}
+
+#cboxContent {
+  position: relative;
+}
+
+#cboxLoadedContent {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#cboxTitle {
+  margin: 0;
+}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+  cursor: pointer;
+}
+
+.cboxPhoto {
+  float: left;
+  margin: auto;
+  border: 0;
+  display: block;
+  max-width: none;
+  -ms-interpolation-mode: bicubic;
+}
+
+.cboxIframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+
+#cboxOverlay {
+  background: #fff;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+#colorbox {
+  outline: 0;
+}
+
+#cboxContent {
+  margin-top: 32px;
+  overflow: visible;
+  background: #000;
+}
+
+.cboxIframe {
+  background: #fff;
+}
+
+#cboxError {
+  padding: 50px;
+  border: 1px solid #ccc;
+}
+
+#cboxLoadedContent {
+  background: #000;
+  padding: 1px;
+}
+
+#cboxLoadingGraphic {
+  background: url(/../images/colorboxs/loading.gif) no-repeat center center;
+}
+
+#cboxLoadingOverlay {
+  background: #000;
+}
+
+#cboxTitle {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  color: #000;
+}
+
+#cboxCurrent {
+  position: absolute;
+  top: -22px;
+  right: 205px;
+  text-indent: -9999px;
+}
+
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  text-indent: -9999px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  background: url(/../images/colorboxs/controls.png) no-repeat 0 0;
+}
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+  outline: 0;
+}
+
+#cboxPrevious {
+  background-position: 0px 0px;
+  right: 44px;
+}
+
+#cboxPrevious:hover {
+  background-position: 0px -25px;
+}
+
+#cboxNext {
+  background-position: -25px 0px;
+  right: 22px;
+}
+
+#cboxNext:hover {
+  background-position: -25px -25px;
+}
+
+#cboxClose {
+  background-position: -50px 0px;
+  right: 0;
+}
+
+#cboxClose:hover {
+  background-position: -50px -25px;
+}
+
+.cboxSlideshow_on #cboxPrevious,
+.cboxSlideshow_off #cboxPrevious {
+  right: 66px;
+}
+
+.cboxSlideshow_on #cboxSlideshow {
+  background-position: -75px -25px;
+  right: 44px;
+}
+
+.cboxSlideshow_on #cboxSlideshow:hover {
+  background-position: -100px -25px;
+}
+
+.cboxSlideshow_off #cboxSlideshow {
+  background-position: -100px 0px;
+  right: 44px;
+}
+
+.cboxSlideshow_off #cboxSlideshow:hover {
+  background-position: -75px -25px;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -523,6 +747,8 @@ body {
           align-items: center;
   padding: 0 4rem;
   height: 130px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 #header.scrolling {
@@ -572,6 +798,23 @@ body {
   font-size: 3rem;
 }
 
+.header-small #header .meta-info {
+  font-size: 1.4rem;
+}
+
+.header-small #header .header__bottom .container {
+  height: 70px;
+}
+
+.header-small #header .site__logo img {
+  height: 50px;
+  width: 50px;
+}
+
+.header-small #header .site__name {
+  font-size: 2.4rem;
+}
+
 #content {
   padding-top: 165px;
 }
@@ -585,10 +828,31 @@ body {
   padding: 6rem 4rem;
   background: #333;
   color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #footer a {
   color: #FFF;
+}
+
+#footer .copyright {
+  margin: 0 1rem;
+}
+
+#footer-menu {
+  margin: 0 1rem;
+}
+
+#footer-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#footer-menu ul li {
+  margin: 0 1rem 1rem 1rem;
 }
 
 #trigger-mobile-menu-wrapper {
@@ -622,6 +886,10 @@ body {
 
 #menu-main a:hover {
   color: #068587;
+}
+
+.header-small #menu-main a {
+  font-size: 2rem;
 }
 
 .page__header {
@@ -673,14 +941,29 @@ body {
   margin: 0 auto 3rem auto;
 }
 
+.page__content section#horticulture {
+  background: #EFEFEF;
+  padding: 10rem 2rem;
+}
+
 .page__content section#contact {
-  background: #07b878;
+  background: #058758;
   color: #FFF;
-  padding: 6rem 2rem;
+  padding: 10rem 2rem;
+}
+
+.page__content section#contact h2 {
+  text-align: left;
+  margin: 0 1rem 4rem 1rem;
+}
+
+.page__content section#contact .container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .service-listing {
-  margin: 4rem 0;
+  margin: 8rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -722,19 +1005,20 @@ body {
       flex-wrap: wrap;
 }
 
-.portfolio {
+.portfolio-listing .portfolio {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   padding: 0 2rem;
   margin-bottom: 6rem;
+  max-width: 570px;
 }
 
-.portfolio__image {
+.portfolio-listing .portfolio__image {
   line-height: 8px;
 }
 
-.portfolio__title {
+.portfolio-listing .portfolio__title {
   font-size: 3rem;
   padding: 3rem 0;
   border-left: 1px solid #999;
@@ -773,5 +1057,61 @@ body {
 .testimonial__author:before {
   content: '\2015';
   margin-right: 0.5rem;
+}
+
+#contact-form .form-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  margin: 0 1rem;
+  width: 50%;
+}
+
+#contact-form .form-item.details {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+#contact-form input[type="text"],
+#contact-form textarea {
+  background: none;
+  border-bottom: 1px solid #FFF;
+  color: #FFF;
+}
+
+#contact-form input[type="text"]::-webkit-input-placeholder,
+#contact-form textarea::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+#contact-form input[type="text"]::-ms-input-placeholder,
+#contact-form textarea::-ms-input-placeholder {
+  color: #FFF;
+}
+
+#contact-form input[type="text"]::placeholder,
+#contact-form textarea::placeholder {
+  color: #FFF;
+}
+
+#contact-form .row {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contact-form .form-actions {
+  text-align: right;
+  margin-top: 3rem;
+}
+
+#contact-form .form-actions button {
+  background: none;
+  border: 1px solid #FFF;
+  margin: 0 1rem;
 }
 

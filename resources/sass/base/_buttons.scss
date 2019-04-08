@@ -6,22 +6,25 @@ $_button-background-color-hover: shade($action-color, 20%);
   appearance: none;
   background-color: $_button-background-color;
   border: 0;
-  border-radius: $base-border-radius;
+  border-radius: 0;
   color: contrast-switch($_button-background-color);
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
-  font-size: 16px;
+  font-size: 18px;
+  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: $small-spacing $base-spacing;
+  padding: 0 2rem;
   text-align: center;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  height: 55px;
+  line-height: 53px;
 
   &:hover {
     background-color: $_button-background-color-hover;

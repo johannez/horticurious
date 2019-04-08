@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Portfolio;
 
 class PageController extends Controller
 {
@@ -26,66 +27,7 @@ class PageController extends Controller
       ]
     ];
 
-    $portfolios = [
-      [
-        'title' => 'Portfoli 1',
-        'images' => [
-          'https://picsum.photos/650/400?image=0',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random'
-        ],
-        'description' => 'Vivamus consectetuer hendrerit lacus. Vivamus elementum semper nisi. Cras non dolor.'
-      ],
-      [
-        'title' => 'Portfoli 2',
-        'images' => [
-          'https://picsum.photos/650/400?image=100',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random'
-        ],
-        'description' => 'Vivamus consectetuer hendrerit lacus. Vivamus elementum semper nisi. Cras non dolor.'
-      ],
-      [
-        'title' => 'Portfoli 3',
-        'images' => [
-          'https://picsum.photos/650/400?image=200',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random'
-        ],
-        'description' => 'Vivamus consectetuer hendrerit lacus. Vivamus elementum semper nisi. Cras non dolor.'
-      ],
-      [
-        'title' => 'Portfoli 4',
-        'images' => [
-          'https://picsum.photos/650/400?image=310',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random'
-        ],
-        'description' => 'Vivamus consectetuer hendrerit lacus. Vivamus elementum semper nisi. Cras non dolor.'
-      ],
-      [
-        'title' => 'Portfoli 5',
-        'images' => [
-          'https://picsum.photos/650/400?image=400',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random',
-          'https://picsum.photos/650/400?random'
-        ],
-        'description' => 'Vivamus consectetuer hendrerit lacus. Vivamus elementum semper nisi. Cras non dolor.'
-      ],
-      [
-        'title' => 'Portfoli 6',
-        'images' => [
-          'https://picsum.photos/650/400?image=500',
-          'https://picsum.photos/650/400?random',
-        ],
-        'description' => 'Vivamus consectetuer hendrerit lacus. Vivamus elementum semper nisi. Cras non dolor.'
-      ]
-    ];
+    $portfolios = Portfolio::get();
 
     return view('page.home', compact('services', 'portfolios'));
   }

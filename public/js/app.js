@@ -98,6 +98,18 @@ module.exports = __webpack_require__(2);
 //     el: '#app'
 // });
 
+if ($(document).scrollTop() > 50) {
+  $('body').addClass('header-small');
+}
+
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 50) {
+    $('body').addClass('header-small');
+  } else {
+    $('body').removeClass('header-small');
+  }
+});
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {

@@ -3,9 +3,26 @@
     padding: 6rem 4rem;
     background: $dark-gray;
     color: #FFF;
+    display: flex;
   }
 
   a {
     color: #FFF;
+  }
+
+  .copyright {
+    margin: 0 1rem;
+  }
+}
+
+#footer-menu {
+  margin: 0 1rem;
+
+  ul {
+    display: flex;
+
+    li {
+      margin: 0 1rem 1rem 1rem;
+    }
   }
 }
