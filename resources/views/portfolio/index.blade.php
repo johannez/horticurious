@@ -7,7 +7,7 @@
           <img src="{{ $image->path }}" alt="{{ $image->alt }}">
         </div>
         <div class="portfolio__title">{{ $port->title }}</div>
-      </div>
-    </a>
+      </a>
+    </div>
   @endforeach
 </div>

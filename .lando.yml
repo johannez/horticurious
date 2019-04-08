@@ -2,3 +2,7 @@ name: horticurious
 recipe: laravel
 config:
   webroot: public
+
+services:
+  database:
+    type: mysql

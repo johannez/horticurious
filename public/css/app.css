@@ -1018,12 +1018,64 @@ body {
   line-height: 8px;
 }
 
+.portfolio-listing .portfolio__image img {
+  border: 1px solid #999;
+}
+
 .portfolio-listing .portfolio__title {
   font-size: 3rem;
   padding: 3rem 0;
   border-left: 1px solid #999;
   border-right: 1px solid #999;
   border-bottom: 1px solid #999;
+}
+
+article.portfolio .portfolio__header {
+  position: relative;
+}
+
+article.portfolio .portfolio__header-image-filter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(0, 0, 0, 0.8)), color-stop(70%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 70%);
+}
+
+article.portfolio h1 {
+  position: absolute;
+  bottom: 20%;
+  left: 3%;
+  width: 40%;
+  color: #FFF;
+}
+
+article.portfolio .portfolio__description {
+  margin: 8rem auto;
+  font-size: 2.2rem;
+  color: #333;
+  max-width: 800px;
+}
+
+article.portfolio .portfolio__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 8rem;
+}
+
+article.portfolio .portfolio__images .image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33%;
+          flex: 0 1 33%;
+  line-height: 8px;
 }
 
 .testimonial {
@@ -1082,16 +1134,19 @@ body {
 #contact-form input[type="text"]::-webkit-input-placeholder,
 #contact-form textarea::-webkit-input-placeholder {
   color: #FFF;
+  opacity: 1;
 }
 
 #contact-form input[type="text"]::-ms-input-placeholder,
 #contact-form textarea::-ms-input-placeholder {
   color: #FFF;
+  opacity: 1;
 }
 
 #contact-form input[type="text"]::placeholder,
 #contact-form textarea::placeholder {
   color: #FFF;
+  opacity: 1;
 }
 
 #contact-form .row {

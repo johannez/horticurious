@@ -13,6 +13,10 @@
 
   .portfolio__image {
     line-height: 8px;
+
+    img {
+      border: 1px solid $medium-gray;
+    }
   }
 
   .portfolio__title {

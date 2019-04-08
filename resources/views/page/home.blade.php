@@ -20,7 +20,7 @@
       </div>
     </header>
 
-    <div class="page__content">
+    <div class="page__content container">
       <section id="services">
         <h2>Services</h2>
         <div class="introduction">Morbi nec metus. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Fusce vulputate eleifend sapien.</div>
@@ -34,7 +34,7 @@
             </div>
           @endforeach
         </div>
-        
+
       </section>
 
       <section id="portfolio">
