@@ -16,8 +16,12 @@
     border-bottom: 1px solid #FFF;
     color: #FFF;
 
+    // &::-webkit-input-placeholder,
+    // &::-moz-placeholder,
+    // &:-ms-input-placeholder,
     &::placeholder {
       color: #FFF;
+      opacity: 1;
     }
   }
 
