@@ -3,10 +3,26 @@
 // @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 
-@import '~bourbon/core/bourbon';
+// @import '~bourbon/core/bourbon';
 
-@import 'base/base';
-@import 'layout/layout';
-@import 'components/components';
-@import 'theme/theme';
+// @import 'base/base';
+// @import 'layout/layout';
+// @import 'components/components';
+// @import 'theme/theme';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+// customize
+.center-vertical {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
 

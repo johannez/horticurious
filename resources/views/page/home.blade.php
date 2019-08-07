@@ -8,15 +8,17 @@
 
   <article class="page page--home">
 
-    <header class="page__header">
+    <header class="page__header relative">
       <div class="page__header-image">
         <img src="https://picsum.photos/1440/720?image=976">
         <div class="page__header-image-filter"></div>
       </div>
 
-      <div class="page__intro">
-        <h1>Horticurious Gardening</h1>
-        <p>Design, Installation, and Maintenance</p>
+      <div class="page__intro text-white center-vertical px-8">
+        <div class="mx-auto max-w-lg">
+          <h1>Horticurious Gardening</h1>
+          <p class="text-2xl">Design, Installation, and Maintenance</p>
+        </div>
       </div>
     </header>
 
