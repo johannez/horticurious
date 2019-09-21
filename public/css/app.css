@@ -556,7 +556,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /**
@@ -590,20 +590,6 @@ img,
 video {
   max-width: 100%;
   height: auto;
-}
-
-h1 {
-  font-size: 5rem;
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 1.25rem;
-}
-
-h3 {
-  font-size: 1.125rem;
 }
 
 .container {
@@ -640,6 +626,10 @@ h3 {
 
 .bg-white {
   background-color: #FFF;
+}
+
+.bg-black {
+  background-color: #000;
 }
 
 .bg-gray-100 {
@@ -690,6 +680,10 @@ h3 {
   background-color: #FFF;
 }
 
+.hover\:bg-black:hover {
+  background-color: #000;
+}
+
 .hover\:bg-gray-100:hover {
   background-color: #f5f5f5;
 }
@@ -736,6 +730,10 @@ h3 {
 
 .focus\:bg-white:focus {
   background-color: #FFF;
+}
+
+.focus\:bg-black:focus {
+  background-color: #000;
 }
 
 .focus\:bg-gray-100:focus {
@@ -866,6 +864,10 @@ h3 {
   border-color: #FFF;
 }
 
+.border-black {
+  border-color: #000;
+}
+
 .border-gray-100 {
   border-color: #f5f5f5;
 }
@@ -914,6 +916,10 @@ h3 {
   border-color: #FFF;
 }
 
+.hover\:border-black:hover {
+  border-color: #000;
+}
+
 .hover\:border-gray-100:hover {
   border-color: #f5f5f5;
 }
@@ -960,6 +966,10 @@ h3 {
 
 .focus\:border-white:focus {
   border-color: #FFF;
+}
+
+.focus\:border-black:focus {
+  border-color: #000;
 }
 
 .focus\:border-gray-100:focus {
@@ -1696,16 +1706,12 @@ h3 {
   clear: both;
 }
 
-.font-sans {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.font-header {
+  font-family: Josefin Sans, sans;
 }
 
-.font-serif {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-.font-mono {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+.font-body {
+  font-family: Open Sans, sans;
 }
 
 .font-hairline {
@@ -4151,6 +4157,10 @@ h3 {
   color: #FFF;
 }
 
+.text-black {
+  color: #000;
+}
+
 .text-gray-100 {
   color: #f5f5f5;
 }
@@ -4197,6 +4207,10 @@ h3 {
 
 .hover\:text-white:hover {
   color: #FFF;
+}
+
+.hover\:text-black:hover {
+  color: #000;
 }
 
 .hover\:text-gray-100:hover {
@@ -4247,6 +4261,10 @@ h3 {
   color: #FFF;
 }
 
+.focus\:text-black:focus {
+  color: #000;
+}
+
 .focus\:text-gray-100:focus {
   color: #f5f5f5;
 }
@@ -4292,11 +4310,11 @@ h3 {
 }
 
 .text-xs {
-  font-size: 0.75rem;
+  font-size: .75rem;
 }
 
 .text-sm {
-  font-size: 0.875rem;
+  font-size: .875rem;
 }
 
 .text-base {
@@ -4324,11 +4342,15 @@ h3 {
 }
 
 .text-5xl {
-  font-size: 3rem;
+  font-size: 2.75rem;
 }
 
 .text-6xl {
   font-size: 4rem;
+}
+
+.text-7xl {
+  font-size: 5rem;
 }
 
 .italic {
@@ -4753,6 +4775,179 @@ h3 {
           transform: translateY(-50%);
 }
 
+.image-filter {
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.125rem;
+}
+
+input.transparent,
+textarea.transparent {
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+  color: #FFF;
+}
+
+input.transparent::-webkit-input-placeholder,
+textarea.transparent::-webkit-input-placeholder {
+  color: #FFF;
+  opacity: 1;
+}
+
+input.transparent::-ms-input-placeholder,
+textarea.transparent::-ms-input-placeholder {
+  color: #FFF;
+  opacity: 1;
+}
+
+input.transparent::placeholder,
+textarea.transparent::placeholder {
+  color: #FFF;
+  opacity: 1;
+}
+
+input[type="text"] {
+  height: 55px;
+  line-height: 53px;
+  padding: 0 1rem;
+}
+
+button,
+.btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0 2rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  height: 55px;
+  line-height: 53px;
+}
+
+button.light,
+.btn.light {
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+button.light:hover,
+.btn.light:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 5rem;
+  font-family: Josefin Sans, sans;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.75rem;
+  font-family: Josefin Sans, sans;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-family: Josefin Sans, sans;
+}
+
+.portfolio-listing .portfolio {
+  overflow: hidden;
+}
+
+.portfolio-listing .portfolio img {
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.portfolio-listing .portfolio .image-filter,
+.portfolio-listing .portfolio .portfolio__title {
+  opacity: 0;
+  -webkit-transition: opacity .3s ease-in;
+  transition: opacity .3s ease-in;
+}
+
+.portfolio-listing .portfolio:hover .image-filter {
+  opacity: 0.5;
+}
+
+.portfolio-listing .portfolio:hover .portfolio__title {
+  opacity: 1;
+}
+
+.portfolio-listing .portfolio:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#menu-main a {
+  -webkit-transition: font-size .3s;
+  transition: font-size .3s;
+}
+
+#header .meta-info,
+#header .site__name {
+  -webkit-transition: font-size .3s;
+  transition: font-size .3s;
+}
+
+#header .site__logo img {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.header-small #menu-main a {
+  font-size: 1.25rem;
+}
+
+.header-small #header .site__logo img {
+  height: 50px;
+  width: 50px;
+}
+
+.header-small #header .meta-info {
+  font-size: .875rem;
+}
+
+.header-small #header .site__name {
+  font-size: 1.25rem;
+}
+
 @media (min-width: 1440px) {
   .xxl\:appearance-none {
     -webkit-appearance: none;
@@ -4774,6 +4969,10 @@ h3 {
 
   .xxl\:bg-white {
     background-color: #FFF;
+  }
+
+  .xxl\:bg-black {
+    background-color: #000;
   }
 
   .xxl\:bg-gray-100 {
@@ -4824,6 +5023,10 @@ h3 {
     background-color: #FFF;
   }
 
+  .xxl\:hover\:bg-black:hover {
+    background-color: #000;
+  }
+
   .xxl\:hover\:bg-gray-100:hover {
     background-color: #f5f5f5;
   }
@@ -4870,6 +5073,10 @@ h3 {
 
   .xxl\:focus\:bg-white:focus {
     background-color: #FFF;
+  }
+
+  .xxl\:focus\:bg-black:focus {
+    background-color: #000;
   }
 
   .xxl\:focus\:bg-gray-100:focus {
@@ -5000,6 +5207,10 @@ h3 {
     border-color: #FFF;
   }
 
+  .xxl\:border-black {
+    border-color: #000;
+  }
+
   .xxl\:border-gray-100 {
     border-color: #f5f5f5;
   }
@@ -5048,6 +5259,10 @@ h3 {
     border-color: #FFF;
   }
 
+  .xxl\:hover\:border-black:hover {
+    border-color: #000;
+  }
+
   .xxl\:hover\:border-gray-100:hover {
     border-color: #f5f5f5;
   }
@@ -5094,6 +5309,10 @@ h3 {
 
   .xxl\:focus\:border-white:focus {
     border-color: #FFF;
+  }
+
+  .xxl\:focus\:border-black:focus {
+    border-color: #000;
   }
 
   .xxl\:focus\:border-gray-100:focus {
@@ -5830,16 +6049,12 @@ h3 {
     clear: both;
   }
 
-  .xxl\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  .xxl\:font-header {
+    font-family: Josefin Sans, sans;
   }
 
-  .xxl\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  }
-
-  .xxl\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .xxl\:font-body {
+    font-family: Open Sans, sans;
   }
 
   .xxl\:font-hairline {
@@ -8285,6 +8500,10 @@ h3 {
     color: #FFF;
   }
 
+  .xxl\:text-black {
+    color: #000;
+  }
+
   .xxl\:text-gray-100 {
     color: #f5f5f5;
   }
@@ -8331,6 +8550,10 @@ h3 {
 
   .xxl\:hover\:text-white:hover {
     color: #FFF;
+  }
+
+  .xxl\:hover\:text-black:hover {
+    color: #000;
   }
 
   .xxl\:hover\:text-gray-100:hover {
@@ -8381,6 +8604,10 @@ h3 {
     color: #FFF;
   }
 
+  .xxl\:focus\:text-black:focus {
+    color: #000;
+  }
+
   .xxl\:focus\:text-gray-100:focus {
     color: #f5f5f5;
   }
@@ -8426,11 +8653,11 @@ h3 {
   }
 
   .xxl\:text-xs {
-    font-size: 0.75rem;
+    font-size: .75rem;
   }
 
   .xxl\:text-sm {
-    font-size: 0.875rem;
+    font-size: .875rem;
   }
 
   .xxl\:text-base {
@@ -8458,11 +8685,15 @@ h3 {
   }
 
   .xxl\:text-5xl {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 
   .xxl\:text-6xl {
     font-size: 4rem;
+  }
+
+  .xxl\:text-7xl {
+    font-size: 5rem;
   }
 
   .xxl\:italic {

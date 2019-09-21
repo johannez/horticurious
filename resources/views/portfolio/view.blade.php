@@ -8,18 +8,18 @@
 
   <article class="portfolio container" id="portfolio-{{ $portfolio->id }}">
 
-    <header class="portfolio__header">
+    <header class="portfolio__header relative">
       <div class="portfolio__header-image">
         <img src="{{ $portfolio->header_image->path }}" alt="{{ $portfolio->header_image->alt }}">
       </div>
-      <div class="portfolio__header-image-filter"></div>
-      <h1>{{ $portfolio->title }}</h1>
+      <div class="image-filter"></div>
+      <h1 class="text-white text-center center-vertical px-8">{{ $portfolio->title }}</h1>
     </header>
 
 
     <section class="portfolio__content">
       
-      <div class="portfolio__description">{!! $portfolio->description !!}</div>
+      <div class="portfolio__description text-gray-500 text-2xl my-10 mx-auto max-w-5xl">{!! $portfolio->description !!}</div>
 
       <div class="portfolio__images">
         @foreach($portfolio->images()->get() as $image)

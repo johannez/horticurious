@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config('app.locale') }}">
+<html lang="{{ config('app.locale') }}" class="font-body">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="/images/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Lora:700|Nunito:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400|Open+Sans:300,400,700" rel="stylesheet">
     
 
 
@@ -28,7 +28,7 @@
     <div id="page">
       @include('partials.header')
 
-      <section id="content">
+      <section id="content" class="pt-40">
         @yield('main')
       </section>
 

@@ -15,14 +15,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-// customize
-.center-vertical {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-}
+// base styles
+@import 'base/utilities';
+@import 'base/forms';
+@import 'base/buttons';
+@import 'base/typography';
 
 
+// components
+@import 'components/portfolio-listing';
+@import 'components/header';

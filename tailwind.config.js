@@ -7,8 +7,13 @@ module.exports = {
       center: true,
       padding: '2rem'
     },
+    fontFamily: {
+      'header': ['Josefin Sans', 'sans'],
+      'body': ['Open Sans', 'sans']
+    },
     colors: {
       'white': '#FFF',
+      'black': '#000',
       gray: {
         '100': '#f5f5f5',
         '200': '#eeeeee',
@@ -22,20 +27,21 @@ module.exports = {
       },
       'green': '#058758',
       'teal': '#068587'
+    },
+    fontSize: {
+      'xs': '.75rem',
+      'sm': '.875rem',
+      'base': '1rem',
+      'lg': '1.125rem',
+      'xl': '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '2.75rem',
+      '6xl': '4rem',
+      '7xl': '5rem'
     }
   },
   variants: {},
-  plugins: [
-    function({ addBase, config }) {
-      addBase({
-        'h1': { 
-          fontSize: '5rem',
-          lineHeight: '1',
-          marginBottom: '1rem'
-        },
-        'h2': { fontSize: config('theme.fontSize.xl') },
-        'h3': { fontSize: config('theme.fontSize.lg') },
-      })
-    }
-  ]
+  plugins: []
 }

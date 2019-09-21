@@ -1,7 +1,7 @@
-<header id="header">
+<header id="header" class="fixed z-10 w-full bg-white shadow">
   <div class="header__top bg-teal text-white py-1 text-right">
     <div class="container">
-      <div class="meta-info">
+      <div class="meta-info text-base">
         <span class="meta__phone">(250) 218-0826</span> | <span class="meta__email"><a href="mailto:trisha@horticurious.ca">trisha@horticurious.ca</a></span>
       </div>
     </div>

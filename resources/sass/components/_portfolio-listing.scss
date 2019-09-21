@@ -1,33 +1,29 @@
 .portfolio-listing {
-  margin-top: 4rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
   .portfolio {
-    flex: 0 1 50%;
-    padding: 0 2rem;
-    margin-bottom: 6rem;
-    max-width: 570px;
-  }
-
-  .portfolio__image {
-    line-height: 8px;
-
+    overflow: hidden;
+    
     img {
-      border: 1px solid $medium-gray;
+      transition: all .3s ease-in;
+    }
+
+    .image-filter,
+    .portfolio__title {
+      opacity: 0;
+      transition: opacity .3s ease-in;
+    }
+
+    &:hover {
+      .image-filter {
+        opacity: 0.5;
+      }
+
+      .portfolio__title {
+        opacity: 1;
+      }
+
+      img {
+        transform: scale(1.1);
+      }
     }
   }
-
-  .portfolio__title {
-    font-size: 3rem;
-    padding: 3rem 0;
-    border-left: 1px solid $medium-gray;
-    border-right: 1px solid $medium-gray;
-    border-bottom: 1px solid $medium-gray;
-  }
 }
-
-
-
-

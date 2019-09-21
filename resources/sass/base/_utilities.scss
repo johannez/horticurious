@@ -1,0 +1,11 @@
+.center-vertical {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.image-filter {
+  @apply bg-black opacity-50 w-full h-full absolute top-0 left-0;
+}
