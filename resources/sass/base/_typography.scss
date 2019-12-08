@@ -1,5 +1,5 @@
 h1 {
-  @apply text-7xl font-header;
+  @apply text-3xl font-header;
   line-height: 1;
   margin-bottom: 1rem;
   font-weight: 400;
@@ -12,3 +12,16 @@ h2 {
 h3 {
   @apply text-3xl font-header;
 }
+
+@screen md {
+  h1 {
+    @apply text-6xl;
+  }
+}
+
+@screen lg {
+  h1 {
+    @apply text-7xl;
+  }
+}
+

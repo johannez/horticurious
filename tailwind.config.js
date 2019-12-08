@@ -1,7 +1,10 @@
 module.exports = {
   theme: {
-    screens: {
-      'xxl': '1440px'
+    extend: {
+      maxWidth: {
+        '2xs': '16rem',
+        'hd': '1280px'
+      }
     },
     container: {
       center: true,

@@ -1,45 +1,9 @@
 #menu-main {
   a {
-    transition: font-size .3s;
+    // transition: font-size .3s;
+
+    // &:hover {
+    //   color: theme('colors.teal');
+    // }
   }
-}
-
-#header {
-  .meta-info,
-  .site__name {
-    transition: font-size .3s;
-  }
-
-  .site__logo {
-    img {
-      transition: all .3s;
-    }
-  }
-}
-
-.header-small {
-  #menu-main {
-    a {
-      @apply text-xl;
-    }
-  }
-
-  #header {
-    .site__logo {
-      img {
-        height: 50px;
-        width: 50px;
-      }
-    }
-
-    .meta-info {
-      @apply text-sm;
-    }
-
-    .site__name {
-      @apply text-xl;
-    }
-  }
-
-  
 }

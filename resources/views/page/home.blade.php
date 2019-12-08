@@ -17,9 +17,9 @@
       <div class="image-filter"></div>
 
       <div class="page__intro text-white center-vertical px-8">
-        <div class="mx-auto max-w-lg">
+        <div class="mx-auto max-w-2xs md:max-w-lg">
           <h1>Horticurious Gardening</h1>
-          <p class="text-2xl">Design, Installation, and Maintenance</p>
+          <p class="text-sm md:text-lg lg:text-2xl">Design, Installation, and Maintenance</p>
         </div>
       </div>
     </header>

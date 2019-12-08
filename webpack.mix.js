@@ -14,8 +14,8 @@ const tailwindcss = require('tailwindcss');
 
 
 mix.js('resources/js/app.js', 'public/js')
-  mix.scripts(['node_modules/lity/dist/lity.min.js'], 'public/js/vendor.js')
-  mix.styles(['node_modules/lity/dist/lity.min.css'], 'public/css/vendor.css')
+  mix.scripts([], 'public/js/vendor.js')
+  mix.styles([], 'public/css/vendor.css')
   mix.sass('resources/sass/app.scss', 'public/css')
     .options({
       processCssUrls: false,

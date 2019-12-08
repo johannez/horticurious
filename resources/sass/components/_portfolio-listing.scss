@@ -6,21 +6,7 @@
       transition: all .3s ease-in;
     }
 
-    .image-filter,
-    .portfolio__title {
-      opacity: 0;
-      transition: opacity .3s ease-in;
-    }
-
     &:hover {
-      .image-filter {
-        opacity: 0.5;
-      }
-
-      .portfolio__title {
-        opacity: 1;
-      }
-
       img {
         transform: scale(1.1);
       }

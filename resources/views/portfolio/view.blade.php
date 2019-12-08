@@ -21,9 +21,9 @@
       
       <div class="portfolio__description text-gray-500 text-2xl my-10 mx-auto max-w-5xl">{!! $portfolio->description !!}</div>
 
-      <div class="portfolio__images">
+      <div class="portfolio__images flex flex-wrap">
         @foreach($portfolio->images()->get() as $image)
-          <div class="image">
+          <div class="image w-1/3">
             <img src="{{ $image->path }}" alt="{{ $image->alt }}">
           </div>
         @endforeach
@@ -33,3 +33,5 @@
   </article>
 
 @endsection
+
+
