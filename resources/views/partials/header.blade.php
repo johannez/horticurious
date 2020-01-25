@@ -26,7 +26,7 @@
         </nav>
 
         <nav role="navigation" class="block md:hidden">
-          <menu-tree :menu-items='{!! json_encode($menu_items) !!}'></menu-tree>
+          <menu-mobile :menu-items='{!! json_encode($menu_items) !!}'></menu-mobile>
         </nav>
       </div>
     </div>

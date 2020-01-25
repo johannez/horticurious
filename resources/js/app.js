@@ -1,10 +1,10 @@
 import Vue from 'vue';
 
-import MenuTree from './components/MenuTree';
+import MenuMobile from './components/MenuMobile';
 
 window.Vue = Vue;
 
-Vue.component('menu-tree', MenuTree);
+Vue.component('menu-mobile', MenuMobile);
 
 
 
