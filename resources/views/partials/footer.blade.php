@@ -1,5 +1,5 @@
-<footer id="footer">
-  <div class="container flex bg-gray-800 py-16 text-white">
+<footer id="footer" class="bg-gray-800">
+  <div class="container flex  py-16 text-white">
     <div class="copyright mx-2">© {{ date('Y') }}</div>
 
     <nav id="footer-menu" class="nav" role="navigation">
