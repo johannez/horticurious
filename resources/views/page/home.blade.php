@@ -8,7 +8,7 @@
 
   <article class="page page--home">
 
-    <header class="page__header relative mb-16">
+    <header class="page__header relative max-w-hd mx-auto mb-16">
       <div class="page__header-image">
         <img src="https://picsum.photos/1440/720?image=976">
         <div class="page__header-image-filter"></div>
