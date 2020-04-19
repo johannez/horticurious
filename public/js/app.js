@@ -223,10 +223,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 window.Vue = __WEBPACK_IMPORTED_MODULE_0_vue___default.a;
 
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.mixin({
+  methods: {
+    scrollTo: function scrollTo(target) {
+
+      // Check, if we are on the home page.
+      if (window.location.pathname == '/') {
+        var element = document.getElementById('section-' + target);
+
+        if (element) {
+          var offset = -120;
+          var y = element.getBoundingClientRect().top + window.pageYOffset + offset;
+
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          window.location.hash = target;
+        }
+      } else {
+        // Send them back to the home page. 
+        window.location.href = '/#' + target;
+      }
+    }
+  }
+});
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('menu-mobile', __WEBPACK_IMPORTED_MODULE_1__components_MenuMobile___default.a);
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-  el: '#app'
+  el: '#app',
+  // mixins: [window.horticurious.mixin],
+  methods: {
+    imagesAreLoaded: function imagesAreLoaded(instance) {
+      this.scrollTo(window.location.hash.substring(1));
+    }
+  },
+  mounted: function mounted() {
+    // Check is a hash is set and if we are on the home page
+    if (window.location.pathname == '/') {
+      if (window.location.hash) {
+        imagesLoaded(document.querySelector('#app'), this.imagesAreLoaded);
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -11701,7 +11738,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MenuMobileItem_vue__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MenuMobileItem_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MenuMobileItem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__MenuMobileItem_vue__);
 //
 //
@@ -11748,12 +11785,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     offset: {
       type: String,
-      default: '3.75rem'
+      default: '5.25rem'
     }
   },
   data: function data() {
     return {
-      displayMenu: false
+      displayMenu: false,
+      scrollPosition: 0
     };
   },
 
@@ -11771,7 +11809,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     disableScrolling: function disableScrolling() {
-      this.scrollPosition = window.pageYOffset;
+      // this.scrollPosition = window.pageYOffset;
 
       var $body = document.querySelector('body');
       $body.style.overflow = 'hidden';
@@ -11786,131 +11824,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       $body.style.removeProperty('top');
       $body.style.removeProperty('width');
 
-      window.scrollTo(0, this.scrollPosition);
+      // window.scrollTo(0, this.scrollPosition);
     }
   }
 });
 
 /***/ }),
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "menu-container" }, [
-    _c(
-      "button",
-      {
-        staticClass:
-          "navbar-burger bg-transparent hover:bg-transparent flex items-center border rounded px-0 h-auto leading-none",
-        class: [
-          "text-" + _vm.colors.trigger,
-          "hover:text-" + _vm.colors.trigger
-        ],
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            return _vm.toggleMenu($event)
-          }
-        }
-      },
-      [
-        _c(
-          "svg",
-          {
-            staticClass: "fill-current h-8 w-8",
-            class: { hidden: _vm.displayMenu },
-            attrs: { viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" }
-          },
-          [
-            _c("title", [_vm._v("Menu Open")]),
-            _vm._v(" "),
-            _c("path", {
-              attrs: { d: "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "svg",
-          {
-            staticClass: "fill-current h-6 w-8",
-            class: [{ hidden: !_vm.displayMenu }],
-            attrs: { viewBox: "0 0 298.667 298.667" }
-          },
-          [
-            _c("title", [_vm._v("Menu Close")]),
-            _vm._v(" "),
-            _c("path", {
-              attrs: {
-                d:
-                  "M298.667 30.187L268.48 0 149.333 119.147 30.187 0 0 30.187l119.147 119.146L0 268.48l30.187 30.187L149.333 179.52 268.48 298.667l30.187-30.187L179.52 149.333z",
-                fill: "currentColor"
-              }
-            })
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass:
-          "absolute right-0 w-full md:w-1/2 h-screen overflow-scroll",
-        class: ["bg-" + _vm.colors.bgPrimary, { hidden: !_vm.displayMenu }],
-        style: { top: _vm.offset }
-      },
-      [
-        _c(
-          "ul",
-          { staticClass: "menu menu-level-0 text-lg pb-24" },
-          _vm._l(_vm.menuItems, function(mi) {
-            return _c("menu-mobile-item", {
-              key: mi.id,
-              attrs: { item: mi, level: 0 }
-            })
-          })
-        )
-      ]
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2404230c", module.exports)
-  }
-}
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(20)
+var __vue_script__ = __webpack_require__(11)
 /* template */
-var __vue_template__ = __webpack_require__(21)
+var __vue_template__ = __webpack_require__(12)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -11949,7 +11877,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 20 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11991,12 +11919,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.hideSubMenu = !this.hideSubMenu;
       this.expanderBackground = this.hideSubMenu ? 'bg-transparent' : 'bg-' + this.$parent.colors.bgSecondary;
       this.expanderRotation = this.hideSubMenu ? 'rotate-90' : '-rotate-90';
+    },
+    goTo: function goTo(target) {
+      this.$emit('closeMenu');
+      this.scrollTo(target.substring(1));
     }
   }
 });
 
 /***/ }),
-/* 21 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -12073,7 +12005,13 @@ var render = function() {
                 "text-" + _vm.colors.font,
                 "hover:text-" + _vm.colors.font
               ],
-              attrs: { href: _vm.item.url }
+              attrs: { href: _vm.item.url },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.goTo(_vm.item.url)
+                }
+              }
             },
             [_vm._v(_vm._s(_vm.item.text))]
           ),
@@ -12109,6 +12047,110 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-3fde3282", module.exports)
   }
 }
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "menu-container" }, [
+    _c(
+      "button",
+      {
+        staticClass:
+          "navbar-burger bg-transparent hover:bg-transparent flex items-center border rounded px-0 h-auto leading-none",
+        class: [
+          "text-" + _vm.colors.trigger,
+          "hover:text-" + _vm.colors.trigger
+        ],
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.toggleMenu($event)
+          }
+        }
+      },
+      [
+        _c(
+          "svg",
+          {
+            staticClass: "fill-current h-8 w-8",
+            class: { hidden: _vm.displayMenu },
+            attrs: { viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" }
+          },
+          [
+            _c("title", [_vm._v("Menu Open")]),
+            _vm._v(" "),
+            _c("path", {
+              attrs: { d: "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "svg",
+          {
+            staticClass: "fill-current h-6 w-8",
+            class: [{ hidden: !_vm.displayMenu }],
+            attrs: { viewBox: "0 0 298.667 298.667" }
+          },
+          [
+            _c("title", [_vm._v("Menu Close")]),
+            _vm._v(" "),
+            _c("path", {
+              attrs: {
+                d:
+                  "M298.667 30.187L268.48 0 149.333 119.147 30.187 0 0 30.187l119.147 119.146L0 268.48l30.187 30.187L149.333 179.52 268.48 298.667l30.187-30.187L179.52 149.333z",
+                fill: "currentColor"
+              }
+            })
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "absolute right-0 w-screen md:w-1/2 h-screen overflow-scroll",
+        class: ["bg-" + _vm.colors.bgPrimary, { hidden: !_vm.displayMenu }],
+        style: { top: _vm.offset }
+      },
+      [
+        _c(
+          "ul",
+          { staticClass: "menu menu-level-0 text-lg pb-24" },
+          _vm._l(_vm.menuItems, function(mi) {
+            return _c("menu-mobile-item", {
+              key: mi.id,
+              attrs: { item: mi, level: 0 },
+              on: { closeMenu: _vm.toggleMenu }
+            })
+          })
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2404230c", module.exports)
+  }
+}
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

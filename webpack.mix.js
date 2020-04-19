@@ -14,7 +14,9 @@ const tailwindcss = require('tailwindcss');
 
 
 mix.js('resources/js/app.js', 'public/js')
-  mix.scripts([], 'public/js/vendor.js')
+  mix.scripts([
+    './node_modules/imagesloaded/imagesloaded.pkgd.min.js'
+  ], 'public/js/vendor.js')
   mix.styles([], 'public/css/vendor.css')
   mix.sass('resources/sass/app.scss', 'public/css')
     .options({

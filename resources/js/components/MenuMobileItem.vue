@@ -6,7 +6,7 @@
         <svg class="transform mx-auto" :class="[expanderRotation]" width="14" height="44" viewBox="0 0 42 80" xmlns="http://www.w3.org/2000/svg"><path d="M1 78l36.8-38L1 2.133 2.2 0 41 40 2.2 80z" fill="currentColor" stroke="currentColor" fill-rule="evenodd"/></svg>
       </div>
     </div>
-    <a v-else :href="item.url" class="block py-2 px-6" :class="['text-' + colors.font, 'hover:text-' + colors.font]">{{ item.text }}</a>  
+    <a v-else :href="item.url" @click.prevent="goTo(item.url)" class="block py-2 px-6" :class="['text-' + colors.font, 'hover:text-' + colors.font]">{{ item.text }}</a>  
     
     <ul v-if="item.children && item.children.length > 0" class="menu" :class="['menu-level-' + (level + 1), 'bg-' + colors.bgSecondary, { hidden: hideSubMenu }]">
       <menu-mobile-item v-for="child in item.children" :key="child.id" :item="child" :level="level + 1"></menu-mobile-item>
@@ -34,6 +34,10 @@
         this.hideSubMenu = !this.hideSubMenu;
         this.expanderBackground = this.hideSubMenu ? 'bg-transparent' : 'bg-' + this.$parent.colors.bgSecondary;
         this.expanderRotation = this.hideSubMenu ? 'rotate-90' : '-rotate-90';
+      },
+      goTo(target) {
+        this.$emit('closeMenu');
+        this.scrollTo(target.substring(1));
       }
     }
   };

@@ -3,12 +3,12 @@ module.exports = {
     extend: {
       maxWidth: {
         '2xs': '16rem',
-        'hd': '1280px'
+        'container': '92rem', // 1472px
+        'site': '100rem' // 1600px
+      },
+      inset: {
+        '1/2': '50%'
       }
-    },
-    container: {
-      center: true,
-      padding: '2rem'
     },
     fontFamily: {
       'header': ['Josefin Sans', 'sans'],
@@ -29,7 +29,8 @@ module.exports = {
         '900': '#212121',
       },
       'green': '#058758',
-      'teal': '#068587'
+      'teal': '#068587',
+      'teal-dark': '#04686a'
     },
     fontSize: {
       'xs': '.75rem',

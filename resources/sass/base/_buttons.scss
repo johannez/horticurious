@@ -8,7 +8,7 @@ button,
   cursor: pointer;
   display: inline-block;
   // font-family: $base-font-family;
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
@@ -20,8 +20,8 @@ button,
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  height: 55px;
-  line-height: 53px;
+  height: 40px;
+  line-height: 38px;
 
   &.light {
     color: #FFF;
@@ -30,5 +30,11 @@ button,
     &:hover {
       background: rgba(255, 255, 255, 0.3);
     }
+  }
+
+  @screen md {
+    height: 55px;
+    line-height: 53px;
+    font-size: 1.125rem;
   }
 }

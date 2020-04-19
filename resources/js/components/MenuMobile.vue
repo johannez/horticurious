@@ -11,10 +11,10 @@
       </svg>
     </button>
 
-    <div class="absolute right-0 w-full md:w-1/2 h-screen overflow-scroll" :class="['bg-' + colors.bgPrimary, { hidden: !displayMenu }]" :style="{ top: offset }">
+    <div class="absolute right-0 w-screen md:w-1/2 h-screen overflow-scroll" :class="['bg-' + colors.bgPrimary, { hidden: !displayMenu }]" :style="{ top: offset }">
       
       <ul class="menu menu-level-0 text-lg pb-24">
-        <menu-mobile-item v-for="mi in menuItems" :key="mi.id" :item="mi" :level="0"></menu-mobile-item>
+        <menu-mobile-item v-for="mi in menuItems" :key="mi.id" :item="mi" :level="0" v-on:closeMenu="toggleMenu"></menu-mobile-item>
       </ul> 
     </div>
   </div>
@@ -43,12 +43,13 @@
       },
       offset: {
         type: String,
-        default: '3.75rem'
+        default: '5.25rem'
       }
     },
     data() {
       return {
-        displayMenu: false
+        displayMenu: false,
+        scrollPosition: 0
       }
     },
     components: {
@@ -66,7 +67,7 @@
         }
       },
       disableScrolling() {
-        this.scrollPosition = window.pageYOffset;
+        // this.scrollPosition = window.pageYOffset;
 
         const $body = document.querySelector('body');
         $body.style.overflow = 'hidden';
@@ -81,7 +82,7 @@
         $body.style.removeProperty('top');
         $body.style.removeProperty('width');
 
-        window.scrollTo(0, this.scrollPosition);
+        // window.scrollTo(0, this.scrollPosition);
       },
     }
   };

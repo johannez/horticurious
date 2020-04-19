@@ -6,24 +6,18 @@
 
 @section('main')
 
-  <article class="portfolio container" id="portfolio-{{ $portfolio->id }}">
+  <article class="portfolio md:flex max-w-container mx-auto px-4 py-8 md:py-16" id="portfolio-{{ $portfolio->id }}">
 
-    <header class="portfolio__header relative">
-      <div class="portfolio__header-image">
-        <img src="{{ $portfolio->header_image->path }}" alt="{{ $portfolio->header_image->alt }}">
-      </div>
-      <div class="image-filter"></div>
-      <h1 class="text-white text-center center-vertical px-8">{{ $portfolio->title }}</h1>
-    </header>
+    <section class="portfolio__left md:w-1/2 md:pr-8">
+      <h1>{{ $portfolio->title }}</h1>
+      <div class="portfolio__description text-lg md:text-2xl my-10">{!! $portfolio->description !!}</div>
+    </section>
 
 
-    <section class="portfolio__content">
-      
-      <div class="portfolio__description text-gray-500 text-2xl my-10 mx-auto max-w-5xl">{!! $portfolio->description !!}</div>
-
+    <section class="portfolio__right md:w-1/2">
       <div class="portfolio__images flex flex-wrap">
         @foreach($portfolio->images()->get() as $image)
-          <div class="image w-1/3">
+          <div class="image w-1/2">
             <img src="{{ $image->path }}" alt="{{ $image->alt }}">
           </div>
         @endforeach

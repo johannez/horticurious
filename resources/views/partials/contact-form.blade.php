@@ -4,7 +4,7 @@
   <form method="POST" id="contact-form" action="">
     @csrf
 
-    <div class="flex">
+    <div class="md:flex">
       <div class="w-full name mr-6">
         <input type="text" value="" name="name" placeholder="Name" class="transparent" required>
       </div>
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="flex">
+    <div class="md:flex">
       <div class="w-full company mr-6">
         <input type="text" value="" name="company" placeholder="Company" class="transparent" required>
       </div>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="flex">
+    <div class="md:flex">
       <div class="w-full details">
         <textarea name="details" rows="3" placeholder="Project Details" class="transparent" required></textarea>
       </div>
