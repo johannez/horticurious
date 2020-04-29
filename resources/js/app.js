@@ -1,7 +1,6 @@
+// require('./bootstrap');
+
 import Vue from 'vue';
-
-import MenuMobile from './components/MenuMobile';
-
 window.Vue = Vue;
 
 Vue.mixin({
@@ -28,8 +27,8 @@ Vue.mixin({
   }
 });
 
+import MenuMobile from './components/MenuMobile';
 Vue.component('menu-mobile', MenuMobile);
-
 
 
 new Vue({

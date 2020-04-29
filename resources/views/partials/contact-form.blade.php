@@ -1,7 +1,6 @@
 <div class="contact-form-container">
-  @include('partials.error')
-
-  <form method="POST" id="contact-form" action="">
+  
+  <form method="POST" id="contact-form" action="/contact">
     @csrf
 
     <div class="md:flex">
@@ -15,7 +14,7 @@
 
     <div class="md:flex">
       <div class="w-full company mr-6">
-        <input type="text" value="" name="company" placeholder="Company" class="transparent" required>
+        <input type="text" value="" name="company" placeholder="Company" class="transparent">
       </div>
       <div class="w-full phone">
         <input type="text" value="" name="phone" placeholder="Phone" class="transparent" required>
@@ -23,8 +22,8 @@
     </div>
 
     <div class="md:flex">
-      <div class="w-full details">
-        <textarea name="details" rows="3" placeholder="Project Details" class="transparent" required></textarea>
+      <div class="w-full message">
+        <textarea name="message" rows="3" placeholder="Message" class="transparent" required></textarea>
       </div>
     </div>
 

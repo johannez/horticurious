@@ -7,6 +7,13 @@
 @section('main')
 
   <article class="page page--home">
+    @if (session('contactFormSubmitted')) 
+      <div class="status max-w-site mx-auto">
+        <div class="bg-green text-white p-4 text-center text-lg leading-tight md:text-2xl">
+          Thank you for your submission. We will respond to you as soon as possible.
+        </div>
+      </div>
+    @endif
 
     <header class="page__header relative max-w-site mx-auto mb-8 md:mb-16">
       <div class="page__header-image">

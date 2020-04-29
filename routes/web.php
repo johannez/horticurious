@@ -11,6 +11,10 @@
 |
 */
 
+
 Route::get('/', ['uses' => 'PageController@home', 'as' => 'page.home']);
 
 Route::get('/portfolio/{slug}', 'PortfolioController@view')->name('portfolio.view');
+
+Route::post('/contact', 'PageController@submitContact')->name('contact.submit');
+

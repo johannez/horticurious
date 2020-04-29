@@ -1,13 +1,13 @@
 <header id="header" class="fixed z-50 w-full bg-white shadow">
-  <div class="header__top bg-teal   text-white py-1 text-right">
-    <div class="meta-info text-sm max-w-container mx-auto px-4">
+  <div class="header__top bg-teal text-white py-1 text-right">
+    <div class="meta-info text-sm max-w-container mx-auto px-6 md:px-8 lg:px-12">
       <a href="tel:+1 (250) 218-0826">(250) 218-0826</a>
       <span>|</span>
-      <span class="meta__email"><a href="mailto:trisha@horticurious.ca">trisha@horticurious.ca</a></span>
+      <span class="meta__email"><a href="mailto:trisha&#64;horticurious.ca">trisha&#64;horticurious.ca</a></span>
     </div>
   </div>
   <div class="header__bottom">
-    <div class="flex justify-between items-center py-2 md:py-4 pr-4 pl-2 max-w-container mx-auto px-4">
+    <div class="flex justify-between items-center py-2 md:py-4 pr-4 pl-2 max-w-container mx-auto px-6 md:px-8 lg:px-12">
       <div class="site__logo">
         <a href="/" class="flex items-center text-green text-lg md:text-2xl">
           <img src="/svg/logo.svg" alt="Site logo" class="h-10 w-10md:h-12 md:w-12">
