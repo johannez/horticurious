@@ -23,7 +23,7 @@
       <div class="page__intro relative text-white center-vertical md:max-w-md lg:max-w-xl">
         <div class="bg-teal-dark md:bg-teal -mt-8 md:mt-0 opacity-75 absolute right-0 left-0 top-0 bottom-0"></div>
         <div class="relative z-10 py-6 md:py-8 lg:py-16 px-4 md:px-8 lg:px-16">
-          <h1>Horticurious Gardening</h1>
+          <h1 class="text-4xl md:text-6xl lg:text-7xl">Horticurious Gardening</h1>
           <p class="text-sm md:text-lg lg:text-2xl">Design, Installation, and Maintenance</p>
         </div>
       </div>

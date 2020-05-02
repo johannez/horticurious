@@ -1,36 +1,36 @@
 h1 {
-  @apply text-4xl font-header;
+  @apply text-3xl font-header;
   line-height: 1;
   margin-bottom: 0.25rem;
   font-weight: 400;
 }
 
 h2 {
-  @apply text-3xl font-header;
+  @apply text-2xl font-header;
 }
 
 h3 {
-  @apply text-3xl font-header;
+  @apply text-xl font-header;
 }
 
 @screen md {
   h1 {
-    @apply text-6xl;
+    @apply text-4xl;
     margin-bottom: 1rem;
   }
 
   h2 {
-    @apply text-4xl;
+    @apply text-3xl;
   }
 }
 
 @screen lg {
   h1 {
-    @apply text-7xl;
+    @apply text-5xl;
   }
 
   h2 {
-    @apply text-5xl;
+    @apply text-4xl;
   }
 }
 

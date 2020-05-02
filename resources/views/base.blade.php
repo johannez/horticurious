@@ -15,7 +15,6 @@
 
     @section('stylesheet')
       <link rel="stylesheet" href="/css/vendor.css" type="text/css">
-      
       <link rel="stylesheet" href="/css/app.css">
     @show
 
