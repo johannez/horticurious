@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         factory(App\Portfolio::class, 4)->create()->each(function ($portfolio) {
-            $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
-            $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
-            $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
-            $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
+            // $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
+            // $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
+            // $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
+            // $portfolio->images()->save(factory(App\PortfolioImage::class)->make());
         });
     }
 }

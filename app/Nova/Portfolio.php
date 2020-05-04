@@ -11,6 +11,8 @@ use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
+
 class Portfolio extends Resource
 {
     /**
@@ -55,7 +57,14 @@ class Portfolio extends Resource
             Trix::make('Description')
                 ->hideFromIndex(),
 
-            HasMany::make('Images', 'images', 'App\Nova\PortfolioImage'),
+         
+            Images::make('Images', 'portfolios') // second parameter is the media collection name
+                ->hideFromIndex()
+                ->conversionOnPreview('portfolio-index') // conversion used to display the "original" image
+                ->conversionOnDetailView('portfolio-index') // conversion used on the model's view
+                ->conversionOnForm('portfolio-index') // conversion used to display the image on the model's form
+                ->fullSize(), // full size column
+    
 
             DateTime::make('Created At')
                 ->sortable()
