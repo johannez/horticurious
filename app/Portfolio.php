@@ -20,12 +20,12 @@ class Portfolio extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('portfolio-index')
-            ->width(320)
-            ->height(220);
+            ->width(400)
+            ->height(260);
 
         $this->addMediaConversion('portfolio-index-lg')
-            ->width(640)
-            ->height(440); 
+            ->width(800)
+            ->height(520); 
 
         $this->addMediaConversion('portfolio-detail-sm')
             ->width(400);
@@ -40,8 +40,8 @@ class Portfolio extends Model implements HasMedia
             ->width(2800);          
     }
 
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection('portfolios');
-    }
+    // public function registerMediaCollections(): void
+    // {
+    //     $this->addMediaCollection('images');
+    // }
 }

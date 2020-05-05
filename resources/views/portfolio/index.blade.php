@@ -3,9 +3,12 @@
     <div class="portfolio md:w-1/3 relative mb-6 md:mb-0">
       <a href="{{ route('portfolio.view', [$port->slug]) }}">
         <div class="portfolio__image">
-          {{-- @php ($image = $port->images()->first()) --}}
-          {{-- <img src="{{ $image->path }}" alt="{{ $image->alt }}"> --}}
-          <img src="//dummyimage.com/1200x800.jpg" alt="testing">
+          @php ($image = $port->getMedia('images')->first())
+          @if ($image)
+            <img src="{{ $image->getUrl('portfolio-index') }}" alt="{{ $image->getCustomProperty('alt') ? $image->getCustomProperty('alt') : $image->getAttribute('file_name') }}">
+          @else
+            <img src="//dummyimage.com/400x260.jpg" alt="Portfolio placeholder">
+          @endif
         </div>
         <div class="block image-filter"></div>
         <div class="portfolio__title absolute w-full top-1/2 transform -translate-y-1/2 text-center text-white text-xl md:text-2xl p-4">{{ $port->title }}</div>

@@ -16,12 +16,11 @@
 
     <section class="portfolio__right md:w-1/2">
       <div class="portfolio__images flex flex-wrap">
-        {{-- @foreach($portfolio->images()->get() as $image) --}}
-          <a href="//dummyimage.com/1200x800.jpg" data-fancybox="gallery" class="w-1/2">
-            {{-- <img src="{{ $image->path }}" alt="{{ $image->alt }}" /> --}}
-            <img src="//dummyimage.com/320x220.jpg" alt="testing">
+        @foreach($portfolio->getMedia('images') as $image)
+          <a href="{{ $image->getUrl('portfolio-detail') }}" data-fancybox="gallery" class="w-1/2">
+            <img src="{{ $image->getUrl('portfolio-detail-sm') }}" alt="{{ $image->getCustomProperty('alt') ? $image->getCustomProperty('alt') : $image->getAttribute('file_name') }}">
           </a>
-        {{-- @endforeach --}}
+        @endforeach
       </div>
     </section>
 

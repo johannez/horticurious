@@ -58,12 +58,15 @@ class Portfolio extends Resource
                 ->hideFromIndex(),
 
          
-            Images::make('Images', 'portfolios') // second parameter is the media collection name
+            Images::make('Images')
                 ->hideFromIndex()
-                ->conversionOnPreview('portfolio-index') // conversion used to display the "original" image
-                ->conversionOnDetailView('portfolio-index') // conversion used on the model's view
-                ->conversionOnForm('portfolio-index') // conversion used to display the image on the model's form
-                ->fullSize(), // full size column
+                ->conversionOnPreview('portfolio-index')
+                ->conversionOnDetailView('portfolio-detail')
+                ->conversionOnForm('portfolio-index') 
+                ->fullSize()
+                ->customPropertiesFields([
+                    Text::make('Alt'),
+                ]), 
     
 
             DateTime::make('Created At')
