@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 
 use OptimistDigital\NovaSettings\NovaSettings;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
+use Waynestate\Nova\CKEditor;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Panel;
 use Laravel\Nova\Fields\Image;
@@ -51,7 +51,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                             return $request->about_photo->getClientOriginalName();
                         }),
                     Text::make('Professional Title(s)', 'about_title'),
-                    Trix::make('Details', 'about_details')
+                    CKEditor::make('Details', 'about_details')
                 ];
             }),
         ]);

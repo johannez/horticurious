@@ -2,6 +2,8 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
+        '300': '18.75rem',
+        '400': '25rem',
         '2xs': '16rem',
         'container': '92rem', // 1472px
         'site': '100rem' // 1600px

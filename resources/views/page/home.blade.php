@@ -63,8 +63,8 @@
       <section id="section-about" class="bg-gray-100 mb-16">
         <div class="mx-auto max-w-4xl py-20 px-4">
           <h2 class="mt-0 mb-12">About</h2>
-          <div class="flex justify-center">
-            <div class="about__image flex-none">
+          <div class="md:flex justify-center">
+            <div class="about__image max-w-300 mx-auto flex-none mb-8 md:mb-0">
               @if ($settings['about_photo'])
                 <img src="{{ $settings['about_photo'] }}" alt="Trisha Wilkin" class="rounded-full">
               @else
@@ -72,7 +72,7 @@
               @endif
             </div>
 
-            <div class="about__text pl-20">
+            <div class="about__text md:pl-8 lg:pl-20">
               <h3 class="about__name text-teal leading-none m-0">Trisha Wilkin</h3>
               <div class="about__title text-xs font-bold uppercase">{{ $settings['about_title'] }}</div>
               <div class="about__content mt-8">{!! $settings['about_details'] !!}</div>

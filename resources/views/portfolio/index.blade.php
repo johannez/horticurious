@@ -1,6 +1,6 @@
 <div class="portfolio-listing md:flex flex-wrap mb-6">
   @foreach ($portfolios as $port)
-    <div class="portfolio md:w-1/3 relative mb-6 md:mb-0">
+    <div class="portfolio md:w-1/3 max-w-400 mx-auto relative mb-6 md:mb-0">
       <a href="{{ route('portfolio.view', [$port->slug]) }}">
         <div class="portfolio__image">
           @php ($image = $port->getMedia('images')->first())
