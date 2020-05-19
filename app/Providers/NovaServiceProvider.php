@@ -7,6 +7,17 @@ use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
+use Illuminate\Support\Facades\Log;
+
+use OptimistDigital\NovaSettings\NovaSettings;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Panel;
+use Laravel\Nova\Fields\Image;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
+use Illuminate\Http\Request;
+
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /**
@@ -17,6 +28,34 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        NovaSettings::addSettingsFields([
+            
+            new Panel('Services', function() {
+                return [
+                    Textarea::make('Introduction', 'services_intro'),
+                    Text::make('Service 1 Title', 'service1_title'),
+                    Textarea::make('Service 1 Description', 'service1_description'),
+                    Text::make('Service 2 Title', 'service2_title'),
+                    Textarea::make('Service 2 Description', 'service2_description'),
+                    Text::make('Service 3 Title', 'service3_title'),
+                    Textarea::make('Service 3 Description', 'service3_description'),
+                ];
+            }),
+
+            new Panel('About', function() {
+                return [
+                    Image::make('Photo', 'about_photo')
+                        ->path('images')
+                        ->storeAs(function (Request $request) {
+                            return $request->about_photo->getClientOriginalName();
+                        }),
+                    Text::make('Professional Title(s)', 'about_title'),
+                    Trix::make('Details', 'about_details')
+                ];
+            }),
+        ]);
+
     }
 
     /**
@@ -77,7 +116,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new NovaSettings
+        ];
     }
 
     /**

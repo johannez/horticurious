@@ -5,13 +5,9 @@ h1 {
   font-weight: 400;
 }
 
-h2 {
-  @apply text-2xl font-header;
-}
-
-h3 {
-  @apply text-xl font-header;
-}
+h2 { @apply text-2xl leading-tight font-header mb-3 mt-8; }
+h3 { @apply text-xl leading-tight mb-2 mt-6 font-header; }
+h4 { @apply text-lg leading-tight mb-2 mt-6 font-header; }
 
 @screen md {
   h1 {
@@ -22,6 +18,14 @@ h3 {
   h2 {
     @apply text-3xl;
   }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
 }
 
 @screen lg {
@@ -31,6 +35,14 @@ h3 {
 
   h2 {
     @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
   }
 }
 

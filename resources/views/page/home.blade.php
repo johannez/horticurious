@@ -5,7 +5,6 @@
 
 
 @section('main')
-
   <article class="page page--home">
     @if (session('contactFormSubmitted')) 
       <div class="status max-w-site mx-auto">
@@ -33,10 +32,10 @@
       <section id="section-services" class="mb-16">
         <div class="text-center px-4 mx-auto md:max-w-2xl">
           <h2>Services</h2>
-          <div class="introduction mt-1 text-lg md:text-xl text-gray-500">Morbi nec metus. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Fusce vulputate eleifend sapien.</div>
+          <div class="introduction mt-1 text-lg md:text-xl text-gray-500">{{ $settings['services_intro'] }}</div>
         </div>
 
-        <div class="service-listing md:flex justify-center my-8 md:my-16">
+        <div class="service-listing md:flex justify-center my-8 md:my-24">
           @foreach ($services as $service)
             <div class="service px-4 flex-1 w-full max-w-xs mx-auto md:mx-0 mb-8 md:mb-0 text-center leading-tight">
               <div class="service__icon mb-2 text-teal"><i class="fas fa-{{ $service['icon'] }} fa-3x w-8 h-8 md:w-auto md:h-auto"></i></div>
@@ -52,13 +51,33 @@
         <div class="mx-auto max-w-6xl mb-16">
           <h2 class="text-center mb-6">Selected Gardens</h2>
           @include('portfolio.index')
+
+          <div class="follow flex justify-center items-center mt-16">
+            <a href="https://www.facebook.com/Horticurious" target="_blank" class="btn bg-blue text-white hover:text-white hover:bg-teal">
+              <span class="text-base">Find More On</span>
+              <i class="fab fa-2x fa-facebook-f ml-3 pt-3"></i> 
+            </a>
         </div>
       </section>
 
-      <section id="section-horticulture" class="bg-gray-100 mb-16">
-        <div class="mx-auto max-w-5xl text-center py-20 px-8">
-          <h2>Follow Us</h2>
-          <p>blog posts from Tumblr. Link to Facebook and Instagram.</p>
+      <section id="section-about" class="bg-gray-100 mb-16">
+        <div class="mx-auto max-w-4xl py-20 px-4">
+          <h2 class="mt-0 mb-12">About</h2>
+          <div class="flex justify-center">
+            <div class="about__image flex-none">
+              @if ($settings['about_photo'])
+                <img src="{{ $settings['about_photo'] }}" alt="Trisha Wilkin" class="rounded-full">
+              @else
+                <img src="//dummyimage.com/300x300" class="rounded-full">
+              @endif
+            </div>
+
+            <div class="about__text pl-20">
+              <h3 class="about__name text-teal leading-none m-0">Trisha Wilkin</h3>
+              <div class="about__title text-xs font-bold uppercase">{{ $settings['about_title'] }}</div>
+              <div class="about__content mt-8">{!! $settings['about_details'] !!}</div>
+            </div>
+          </div>
         </div>
       </section>
 

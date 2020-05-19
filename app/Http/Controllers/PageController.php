@@ -11,21 +11,23 @@ class PageController extends Controller
 {
     public function home()
     {
+        $settings = nova_get_settings();
+
         $services = [
             [
                 'icon' => 'pencil-ruler',
-                'title' => 'Design',
-                'description' => 'Integer tincidunt. Cras sagittis. Morbi vestibulum volutpat enim.'
+                'title' => nova_get_setting('service1_title', 'Design'),
+                'description' => $settings['service1_description']
             ],
             [
                 'icon' => 'truck-pickup',
-                'title' => 'Installation',
-                'description' => 'Quisque malesuada placerat nisl. Etiam ultricies nisi vel augue.'
+                'title' => nova_get_setting('service2_title', 'Installation'),
+                'description' => $settings['service2_description']
             ],
             [
                 'icon' => 'tree',
-                'title' => 'Maintenance',
-                'description' => 'Phasellus nec sem in justo pellentesque facilisis. Etiam sit amet orci eget eros faucibus tincidunt.'
+                'title' => nova_get_setting('service2_title', 'Maintenance'),
+                'description' => $settings['service3_description']
             ]
         ];
 
@@ -33,7 +35,7 @@ class PageController extends Controller
 
         $menu_items = config('horticurious.mobile_menu');
 
-        return view('page.home', compact('services', 'portfolios', 'menu_items'));
+        return view('page.home', compact('services', 'portfolios', 'menu_items', 'settings'));
     }
 
     public function submitContact(Request $request)

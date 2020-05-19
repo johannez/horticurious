@@ -20,7 +20,7 @@
           <ul class="flex text-lg lg:text-xl uppercase">
             <li><a href="#services" @click.prevent="scrollTo('services')" class="pr-4 lg:pr-8 hover:text-teal">Services</a></li>
             <li><a href="#portfolio" @click.prevent="scrollTo('portfolio')" class="px-4 lg:px-8 hover:text-teal">Portfolio</a></li>
-            <li><a href="#horticulture" @click.prevent="scrollTo('horticulture')" class="px-4 lg:px-8 hover:text-teal">Horticulture</a></li>
+            <li><a href="#about" @click.prevent="scrollTo('about')" class="px-4 lg:px-8 hover:text-teal">About</a></li>
             <li><a href="#contact" @click.prevent="scrollTo('contact')" class="pl-4 lg:pl-8 hover:text-teal">Contact</a></li>
           </ul>
         </nav>
