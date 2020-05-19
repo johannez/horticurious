@@ -65,7 +65,7 @@
           <h2 class="mt-0 mb-12">About</h2>
           <div class="md:flex justify-center">
             <div class="about__image max-w-300 mx-auto flex-none mb-8 md:mb-0">
-              @if ($settings['about_photo'])
+              @if (isset($settings['about_photo']))
                 <img src="{{ $settings['about_photo'] }}" alt="Trisha Wilkin" class="rounded-full">
               @else
                 <img src="//dummyimage.com/300x300" class="rounded-full">
