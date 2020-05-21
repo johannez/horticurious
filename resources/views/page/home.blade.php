@@ -66,7 +66,7 @@
           <div class="md:flex justify-center">
             <div class="about__image max-w-300 mx-auto flex-none mb-8 md:mb-0">
               @if (isset($settings['about_photo']))
-                <img src="{{ $settings['about_photo'] }}" alt="Trisha Wilkin" class="rounded-full">
+                <img src="{{ $settings['about_photo'] }}" alt="Trisha Wilkin" class="rounded-full border-2">
               @else
                 <img src="//dummyimage.com/300x300" class="rounded-full">
               @endif
@@ -82,9 +82,19 @@
       </section>
 
       <section id="section-testimonial">
-        <div class="testimonial my-16 text-center mx-auto max-w-5xl px-4">
-          <div class="testimonial__content text-2xl md:text-3xl text-gray-500 font-light italic leading-tight">&#8222;Praesent vestibulum dapibus nibh. Praesent ac sem eget est egestas volutpat. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.&#8221;</div>
-          <div class="testimonial__author mt-4 text-gray-700 text-right">&#8213;Proin viverra ligula sit</div>
+        <div class="my-16 text-center mx-auto max-w-5xl px-4">
+          <div id="testimonial-slider" class="glide">
+            <div class="glide__track"  data-glide-el="track">
+              <div class="glide__slides">
+                @foreach ($testimonials as $testi)
+                  <div class="testimonial glide__slide">
+                    <div class="testimonial__content text-2xl md:text-3xl text-gray-800 font-light italic leading-tight">&#8222;{!! strip_tags($testi->quote) !!}&#8221;</div>
+                    <div class="testimonial__author mt-4 text-gray-600 text-right">&#8213;{{ $testi->author }}</div>
+                  </div>
+                @endforeach
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

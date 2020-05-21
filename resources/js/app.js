@@ -1,7 +1,11 @@
 // require('./bootstrap');
 
+import Glide from '@glidejs/glide';
+
 import Vue from 'vue';
 window.Vue = Vue;
+
+
 
 Vue.mixin({
   methods: {
@@ -48,3 +52,13 @@ new Vue({
     }
   }
 });
+
+
+let slider = document.getElementById('testimonial-slider');
+
+if (slider) {
+  new Glide(slider, {
+    autoplay: 7000,
+    type: 'carousel'
+  }).mount();
+}

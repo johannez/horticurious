@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Portfolio;
+use App\Testimonial;
 use App\Mail\ContactFormSubmission;
 use Illuminate\Support\Facades\Mail;
 
@@ -33,9 +34,11 @@ class PageController extends Controller
 
         $portfolios = Portfolio::get();
 
+        $testimonials = Testimonial::get();
+
         $menu_items = config('horticurious.mobile_menu');
 
-        return view('page.home', compact('services', 'portfolios', 'menu_items', 'settings'));
+        return view('page.home', compact('services', 'portfolios', 'menu_items', 'testimonials', 'settings'));
     }
 
     public function submitContact(Request $request)

@@ -1,6 +1,8 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 
+require('laravel-mix-purgecss');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -15,9 +17,12 @@ const tailwindcss = require('tailwindcss');
 
 mix.js('resources/js/app.js', 'public/js')
   mix.scripts([
-    './node_modules/imagesloaded/imagesloaded.pkgd.min.js'
+    'node_modules/imagesloaded/imagesloaded.pkgd.min.js'
   ], 'public/js/vendor.js')
-  mix.styles([], 'public/css/vendor.css')
+  mix.styles([
+    'node_modules/@glidejs/glide/dist/css/glide.core.min.css',
+    'node_modules/@glidejs/glide/dist/css/glide.theme.min.css',
+    ], 'public/css/vendor.css')
   mix.sass('resources/sass/app.scss', 'public/css')
     .options({
       processCssUrls: false,

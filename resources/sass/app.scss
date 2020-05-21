@@ -1,19 +1,9 @@
 
-// Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
-
-
-// @import '~bourbon/core/bourbon';
-
-// @import 'base/base';
-// @import 'layout/layout';
-// @import 'components/components';
-// @import 'theme/theme';
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* purgecss start ignore */
 
 // base styles
 @import 'base/utilities';
@@ -25,3 +15,5 @@
 // components
 @import 'components/portfolio-listing';
 @import 'components/header';
+
+/* purgecss end ignore */
