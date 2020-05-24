@@ -13,6 +13,8 @@ class PageController extends Controller
     public function home()
     {
         $settings = nova_get_settings();
+        $this->seo()->setTitle('Landscape Design, Installation, and Maintenance');
+        $this->seo()->setDescription('Providing landscaping design, installation and maintenance services for the Comox Valley.');
 
         $services = [
             [
