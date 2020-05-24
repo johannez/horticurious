@@ -23,6 +23,7 @@
         "laravel/nova": "~2.0",
         "laravel/tinker": "^1.0",
         "optimistdigital/nova-settings": "^2.5",
+        "spatie/laravel-robots-middleware": "^1.2",
         "swiftmailer/swiftmailer": "^6.0",
         "waynestate/nova-ckeditor4-field": "^0.7.0"
     },
