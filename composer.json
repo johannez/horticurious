@@ -16,13 +16,14 @@
     "require": {
         "php": "^7.2",
         "artesaos/seotools": "^0.17.2",
+        "bakerkretzmar/nova-settings-tool": "^1.0",
         "ebess/advanced-nova-media-library": "^3.1",
         "fideloper/proxy": "^4.0",
         "gregoriohc/laravel-nova-theme-responsive": "^0.8.1",
+        "intervention/image": "^2.5",
         "laravel/framework": "6.*",
         "laravel/nova": "~2.0",
         "laravel/tinker": "^1.0",
-        "optimistdigital/nova-settings": "^2.5",
         "spatie/laravel-robots-middleware": "^1.2",
         "swiftmailer/swiftmailer": "^6.0",
         "waynestate/nova-ckeditor4-field": "^0.7.0"

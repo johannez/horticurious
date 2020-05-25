@@ -16,7 +16,11 @@
 
     <header class="page__header relative max-w-site mx-auto mb-8 md:mb-16">
       <div class="page__header-image">
-        <img src="/storage/images/ocean_garden_lg.jpg">
+        <picture>
+          <source srcset="{{ asset('images/ocean_garden_lg.jpg') }}" media="(min-width: 1024px)">
+          <source srcset="{{ asset('images/ocean_garden_md.jpg') }}, {{ asset('images/ocean_garden_lg.jpg') }} 2x" media="(min-width: 450px)">
+          <img src="{{ asset('images/ocean_garden_sm.jpg') }}" srcset="{{ asset('images/ocean_garden_md.jpg') }} 2x" alt="Ocean Garden" class="w-full">
+        </picture>
       </div>
 
       <div class="page__intro relative text-white center-vertical md:max-w-md lg:max-w-xl">
@@ -32,7 +36,7 @@
       <section id="section-services" class="mb-16">
         <div class="text-center px-4 mx-auto md:max-w-2xl">
           <h2>Services</h2>
-          <div class="introduction mt-1 text-lg md:text-xl text-gray-500">{{ $settings['services_intro'] }}</div>
+          <div class="introduction mt-1 text-lg md:text-xl text-gray-500">{{ $settings->get('services_intro') }}</div>
         </div>
 
         <div class="service-listing md:flex justify-center my-8 md:my-24">
@@ -65,17 +69,15 @@
           <h2 class="mt-0 mb-12">About</h2>
           <div class="md:flex justify-center">
             <div class="about__image max-w-300 mx-auto flex-none mb-8 md:mb-0">
-              @if (isset($settings['about_photo']))
-                <img src="{{ $settings['about_photo'] }}" alt="Trisha Wilkin" class="rounded-full border-2">
-              @else
-                <img src="//dummyimage.com/300x300" class="rounded-full">
-              @endif
+              <picture>
+                <img src="{{ asset('images/trisha_web.jpg') }}" srcset="{{ asset('images/trisha_web.jpg') }} x2" alt="Trisha Wilkin" class="rounded-full border-2">
+              </picture>
             </div>
 
             <div class="about__text md:pl-8 lg:pl-20">
               <h3 class="about__name text-teal leading-none m-0">Trisha Wilkin</h3>
-              <div class="about__title text-xs font-bold uppercase">{{ $settings['about_title'] }}</div>
-              <div class="about__content mt-8">{!! $settings['about_details'] !!}</div>
+              <div class="about__title text-xs font-bold uppercase">{{ $settings->get('about_title') }}</div>
+              <div class="about__content mt-8">{!! $settings->get('about_details') !!}</div>
             </div>
           </div>
         </div>
